@@ -1,0 +1,591 @@
+suraj-anagandula@Suraj:~/Desktop/sudev/public$ nano index.html
+suraj-anagandula@Suraj:~/Desktop/sudev/public$ cd ..
+suraj-anagandula@Suraj:~/Desktop/sudev$ node app.js
+Server running on http://localhost:3000
+suraj-anagandula@Suraj:~/Desktop/sudev$ git init
+hint: Using 'master' as the name for the initial branch. This default branch name
+hint: is subject to change. To configure the initial branch name to use in all
+hint: of your new repositories, which will suppress this warning, call:
+hint: 
+hint: 	git config --global init.defaultBranch <name>
+hint: 
+hint: Names commonly chosen instead of 'master' are 'main', 'trunk' and
+hint: 'development'. The just-created branch can be renamed via this command:
+hint: 
+hint: 	git branch -m <name>
+Initialized empty Git repository in /home/suraj-anagandula/Desktop/sudev/.git/
+suraj-anagandula@Suraj:~/Desktop/sudev$ nano .gitignore
+suraj-anagandula@Suraj:~/Desktop/sudev$ git add .
+suraj-anagandula@Suraj:~/Desktop/sudev$ git commit -m "Added gitignore"
+[master (root-commit) d28bc21] Added gitignore
+ 5 files changed, 835 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 app.js
+ create mode 100644 package-lock.json
+ create mode 100644 package.json
+ create mode 100644 public/index.html
+suraj-anagandula@Suraj:~/Desktop/sudev$ git commit -m "Initial commit - registration app"
+On branch master
+nothing to commit, working tree clean
+suraj-anagandula@Suraj:~/Desktop/sudev$ git remote add origin https://github.com/Suraj-Anagandula/sudev.git
+suraj-anagandula@Suraj:~/Desktop/sudev$ git branch -M main
+suraj-anagandula@Suraj:~/Desktop/sudev$ git push -u origin main
+Username for 'https://github.com': Suraj-Anagandula
+Password for 'https://Suraj-Anagandula@github.com': 
+Enumerating objects: 8, done.
+Counting objects: 100% (8/8), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (8/8), 8.32 KiB | 2.77 MiB/s, done.
+Total 8 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/Suraj-Anagandula/sudev.git
+ * [new branch]      main -> main
+branch 'main' set up to track 'origin/main'.
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED       STATUS       PORTS                                                                                                                                  NAMES
+f6840553acea   c5e702a4b475             "docker-entrypoint.s…"   3 hours ago   Up 3 hours   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp                                                                                            lucid_shockley
+b272a1c0df7f   kicbase/stable:v0.0.50   "/usr/local/bin/entr…"   5 hours ago   Up 5 hours   127.0.0.1:32768->22/tcp, 127.0.0.1:32769->2376/tcp, 127.0.0.1:32770->5000/tcp, 127.0.0.1:32771->8443/tcp, 127.0.0.1:32772->32443/tcp   minikube
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker stop ^C
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker stop b272a1c0df7f
+
+
+
+b272a1c0df7f
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED       STATUS       PORTS                                         NAMES
+f6840553acea   c5e702a4b475   "docker-entrypoint.s…"   3 hours ago   Up 3 hours   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   lucid_shockley
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker stop f6840553acea 
+
+
+
+f6840553acea
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+suraj-anagandula@Suraj:~/Desktop/sudev$ touch Dockerfile
+suraj-anagandula@Suraj:~/Desktop/sudev$ code Dockerfile
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker build -t sudev:latest .
+[+] Building 16.9s (11/11) FINISHED                              docker:default
+ => [internal] load build definition from Dockerfile                       0.1s
+ => => transferring dockerfile: 198B                                       0.0s
+ => [internal] load metadata for docker.io/library/node:18-alpine          4.0s
+ => [auth] library/node:pull token for registry-1.docker.io                0.0s
+ => [internal] load .dockerignore                                          0.1s
+ => => transferring context: 2B                                            0.0s
+ => [1/5] FROM docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3  8.5s
+ => => resolve docker.io/library/node:18-alpine@sha256:8d6421d663b4c28fd3  0.1s
+ => => sha256:dd71dde834b5c203d162902e6b8994cb2309ae049 40.01MB / 40.01MB  5.9s
+ => => sha256:25ff2da83641908f65c3a74d80409d6b1b62ccfaab220b9 446B / 446B  1.2s
+ => => sha256:1e5a4c89cee5c0826c540ab06d4b6b491c96eda0183 1.26MB / 1.26MB  3.8s
+ => => sha256:f18232174bc91741fdf3da96d85011092101a032a93 3.64MB / 3.64MB  7.5s
+ => => extracting sha256:f18232174bc91741fdf3da96d85011092101a032a93a388b  0.1s
+ => => extracting sha256:dd71dde834b5c203d162902e6b8994cb2309ae049a0eabc4  0.5s
+ => => extracting sha256:1e5a4c89cee5c0826c540ab06d4b6b491c96eda01837f430  0.1s
+ => => extracting sha256:25ff2da83641908f65c3a74d80409d6b1b62ccfaab220b9e  0.0s
+ => [internal] load build context                                          0.3s
+ => => transferring context: 2.21MB                                        0.2s
+ => [2/5] WORKDIR /app                                                     0.2s
+ => [3/5] COPY package*.json ./                                            0.1s
+ => [4/5] RUN npm ci --only=production && npm cache clean --force          2.3s
+ => [5/5] COPY . .                                                         0.6s 
+ => exporting to image                                                     0.8s
+ => => exporting layers                                                    0.4s
+ => => exporting manifest sha256:7d8094d8be9d37ab0cba0860b7cfc906513b17bb  0.0s
+ => => exporting config sha256:8bd53cbaee84ec8c3e14f65f7b008336b7fb3f94c6  0.0s
+ => => exporting attestation manifest sha256:53bcc00fcc2a346b69de2df82b65  0.0s
+ => => exporting manifest list sha256:44f4982782c43b312abc9086f26ab60ebca  0.0s
+ => => naming to docker.io/library/sudev:latest                            0.0s
+ => => unpacking to docker.io/library/sudev:latest                         0.2s
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker image ls
+                                                            i Info →   U  In Use
+IMAGE                           ID             DISK USAGE   CONTENT SIZE   EXTRA
+bittu:latest                    a9711ab41f9c       1.58GB          397MB    U   
+calcapp:latest                  a2b4d3e76247       1.57GB          397MB        
+hello-world:latest              452a468a4bf9       25.9kB         9.49kB        
+kicbase/stable:v0.0.50          b97074569ae9       1.94GB          545MB        
+kicbase/stable@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93
+                                eb4fec00e8ad       1.94GB          545MB    U   
+pranaymedipally/calculator-app:latest
+                                3e26b27a9f5f       1.58GB          397MB    U   
+sudev:latest                    44f4982782c4        191MB         46.2MB        
+surajanagandula/bittu:latest    4b1499ec10fa       1.57GB          397MB    U   
+surajanagandula/calcapp:latest
+                                a2b4d3e76247       1.57GB          397MB        
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker run -d -p 3000:3000 sudev:latest 
+b20525e265014373cb9cd9c9830064808c211ce27aac82638de35dc45ca7b8eb
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker container ls
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+b20525e26501   sudev:latest   "docker-entrypoint.s…"   10 seconds ago   Up 10 seconds   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   keen_dijkstra
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker stop b20
+
+
+
+b20
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker container ls
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker run -d -p 3000:3000 sudev:latest 
+b6004ba66ca59ccda32792d342664781b92313d21090ec40c85d926772047632
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker login
+Authenticating with existing credentials... [Username: surajanagandula]
+
+i Info → To login with a different account, run 'docker logout' followed by 'docker login'
+
+
+Login Succeeded
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker tag sudev surajanagandula/sudev
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker push surajanagandula/sudev
+Using default tag: latest
+The push refers to repository [docker.io/surajanagandula/sudev]
+576f0f6e2c3a: Pushed 
+dd71dde834b5: Pushed 
+f18232174bc9: Pushed 
+bb5a41a31f69: Pushed 
+1e5a4c89cee5: Pushed 
+25ff2da83641: Pushed 
+9c8208bbd9a9: Pushed 
+24fee41a14de: Pushed 
+bf2339050fe0: Pushed 
+latest: digest: sha256:44f4982782c43b312abc9086f26ab60ebca85566d31c3d217002ede1bbe45886 size: 856
+suraj-anagandula@Suraj:~/Desktop/sudev$ nano Jenkinsfile
+suraj-anagandula@Suraj:~/Desktop/sudev$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	Dockerfile
+	Jenkinsfile
+
+nothing added to commit but untracked files present (use "git add" to track)
+suraj-anagandula@Suraj:~/Desktop/sudev$ git add .
+suraj-anagandula@Suraj:~/Desktop/sudev$ git commit -m "jd"
+[main 0ef0efe] jd
+ 2 files changed, 41 insertions(+)
+ create mode 100644 Dockerfile
+ create mode 100644 Jenkinsfile
+suraj-anagandula@Suraj:~/Desktop/sudev$ git push
+Username for 'https://github.com': Suraj-Anagandula
+Password for 'https://Suraj-Anagandula@github.com': 
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (4/4), 674 bytes | 674.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Suraj-Anagandula/sudev.git
+   d28bc21..0ef0efe  main -> main
+suraj-anagandula@Suraj:~/Desktop/sudev$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+nothing to commit, working tree clean
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker ps
+CONTAINER ID   IMAGE          COMMAND                  CREATED          STATUS          PORTS                                         NAMES
+b6004ba66ca5   sudev:latest   "docker-entrypoint.s…"   29 minutes ago   Up 29 minutes   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp   beautiful_merkle
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker stop b600
+b600
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl version --client
+Client Version: v1.31.0
+Kustomize Version: v5.4.2
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl version
+Client Version: v1.31.0
+Kustomize Version: v5.4.2
+Unable to connect to the server: dial tcp 192.168.49.2:8443: connect: no route to host
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube version
+minikube version: v1.38.1
+commit: c93a4cb9311efc66b90d33ea03f75f2c4120e9b0
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube start --driver=docker
+😄  minikube v1.38.1 on Ubuntu 24.04
+✨  Using the docker driver based on existing profile
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.50 ...
+🔄  Restarting existing docker container for "minikube" ...
+❗  Failing to connect to https://registry.k8s.io/ from both inside the minikube container and host machine
+💡  To pull new external images, you may need to configure a proxy: https://minikube.sigs.k8s.io/docs/reference/networking/proxy/
+🐳  Preparing Kubernetes v1.35.1 on Docker 29.2.1 ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+
+❗  /usr/local/bin/kubectl is version 1.31.0, which may have incompatibilities with Kubernetes 1.35.1.
+    ▪ Want kubectl v1.35.1? Try 'minikube kubectl -- get pods -A'
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get nodes
+NAME       STATUS   ROLES           AGE     VERSION
+minikube   Ready    control-plane   5h34m   v1.35.1
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker build -t my-k8s-app:v1 .
+[+] Building 0.2s (2/2) FINISHED                                 docker:default
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 198B                                       0.0s
+ => ERROR [internal] load metadata for docker.io/library/node:18-alpine    0.0s
+------
+ > [internal] load metadata for docker.io/library/node:18-alpine:
+------
+Dockerfile:1
+--------------------
+   1 | >>> FROM node:18-alpine
+   2 |     
+   3 |     WORKDIR /app
+--------------------
+ERROR: failed to build: failed to solve: node:18-alpine: failed to resolve source metadata for docker.io/library/node:18-alpine: failed to do request: Head "https://registry-1.docker.io/v2/library/node/manifests/18-alpine": dial tcp: lookup registry-1.docker.io on 127.0.0.53:53: server misbehaving
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker build -t my-k8s-app:v1 .
+[+] Building 24.0s (3/3) FINISHED                                docker:default
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 198B                                       0.0s
+ => ERROR [internal] load metadata for docker.io/library/node:18-alpine   23.8s
+ => [auth] library/node:pull token for registry-1.docker.io                0.0s
+------
+ > [internal] load metadata for docker.io/library/node:18-alpine:
+------
+Dockerfile:1
+--------------------
+   1 | >>> FROM node:18-alpine
+   2 |     
+   3 |     WORKDIR /app
+--------------------
+ERROR: failed to build: failed to solve: failed to fetch oauth token: Post "https://auth.docker.io/token": unexpected EOF
+suraj-anagandula@Suraj:~/Desktop/sudev$ cat Dockerfile
+FROM node:18-alpine
+
+WORKDIR /app
+
+COPY package*.json ./
+RUN npm ci --only=production && npm cache clean --force
+
+COPY . .
+
+EXPOSE 3000
+
+CMD ["node", "app.js"]suraj-anagandula@Suraj:~/Desktop/sudev$ nano Dockerfile
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker build -t my-k8s-app:v1 .
+[+] Building 12.4s (11/11) FINISHED                              docker:default
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 192B                                       0.0s
+ => [internal] load metadata for docker.io/library/node:18                 3.7s
+ => [auth] library/node:pull token for registry-1.docker.io                0.0s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [1/5] FROM docker.io/library/node:18@sha256:c6ae79e38498325db67193d39  0.1s
+ => => resolve docker.io/library/node:18@sha256:c6ae79e38498325db67193d39  0.1s
+ => [internal] load build context                                          0.1s
+ => => transferring context: 46.07kB                                       0.1s
+ => CACHED [2/5] WORKDIR /app                                              0.0s
+ => [3/5] COPY package*.json ./                                            0.1s
+ => [4/5] RUN npm ci --only=production && npm cache clean --force          6.4s
+ => [5/5] COPY . .                                                         0.8s 
+ => exporting to image                                                     1.0s 
+ => => exporting layers                                                    0.4s 
+ => => exporting manifest sha256:faa8f30250016ab2807e12c319847871e986c075  0.0s 
+ => => exporting config sha256:529e5c1a2bd983bbade784864d17a3e9c980863d97  0.0s 
+ => => exporting attestation manifest sha256:fa408fc7b245ef8da7f04f71629c  0.1s 
+ => => exporting manifest list sha256:7934e9cb56f2f1b122c6c4cd1073ddfdb78  0.0s
+ => => naming to docker.io/library/my-k8s-app:v1                           0.0s
+ => => unpacking to docker.io/library/my-k8s-app:v1                        0.3s
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker tag my-k8s-app:v1 surajanagandula/my-k8s-app:v1
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube image load surajanagandula/my-k8s-app:v1
+
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ nano deployment.yaml
+suraj-anagandula@Suraj:~/Desktop/sudev$ nano deployment.yaml
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl apply -f k8s/deployment.yaml
+error: the path "k8s/deployment.yaml" does not exist
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl apply -f deployment.yaml
+deployment.apps/my-k8s-app-deployment created
+suraj-anagandula@Suraj:~/Desktop/sudev$ nano service.yaml
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl apply -f k8s/service.yaml
+error: the path "k8s/service.yaml" does not exist
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl apply -f service.yaml
+service/my-k8s-app-service created
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get pods
+NAME                                     READY   STATUS    RESTARTS      AGE
+my-k8s-app-deployment-775c457458-w7bq7   1/1     Running   0             2m40s
+my-k8s-app-deployment-775c457458-z7qqj   1/1     Running   0             2m40s
+myapp-7657599598-kwb64                   1/1     Running   1 (12m ago)   5h38m
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get deployments
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+my-k8s-app-deployment   2/2     2            2           2m53s
+myapp                   1/1     1            1           5h38m
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get services
+NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+kubernetes           ClusterIP   10.96.0.1        <none>        443/TCP          5h45m
+my-k8s-app-service   NodePort    10.100.223.14    <none>        8080:32000/TCP   32s
+myapp                NodePort    10.101.223.136   <none>        3000:30736/TCP   5h38m
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get all
+NAME                                         READY   STATUS    RESTARTS      AGE
+pod/my-k8s-app-deployment-775c457458-w7bq7   1/1     Running   0             3m13s
+pod/my-k8s-app-deployment-775c457458-z7qqj   1/1     Running   0             3m13s
+pod/myapp-7657599598-kwb64                   1/1     Running   1 (12m ago)   5h39m
+
+NAME                         TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+service/kubernetes           ClusterIP   10.96.0.1        <none>        443/TCP          5h45m
+service/my-k8s-app-service   NodePort    10.100.223.14    <none>        8080:32000/TCP   40s
+service/myapp                NodePort    10.101.223.136   <none>        3000:30736/TCP   5h38m
+
+NAME                                    READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/my-k8s-app-deployment   2/2     2            2           3m13s
+deployment.apps/myapp                   1/1     1            1           5h39m
+
+NAME                                               DESIRED   CURRENT   READY   AGE
+replicaset.apps/my-k8s-app-deployment-775c457458   2         2         2       3m13s
+replicaset.apps/myapp-7657599598                   1         1         1       5h39m
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube service my-k8s-app-service
+┌───────────┬────────────────────┬─────────────┬───────────────────────────┐
+│ NAMESPACE │        NAME        │ TARGET PORT │            URL            │
+├───────────┼────────────────────┼─────────────┼───────────────────────────┤
+│ default   │ my-k8s-app-service │ 8080        │ http://192.168.49.2:32000 │
+└───────────┴────────────────────┴─────────────┴───────────────────────────┘
+🎉  Opening service default/my-k8s-app-service in default browser...
+suraj-anagandula@Suraj:~/Desktop/sudev$ Opening in existing browser session.
+
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube service my-k8s-app-service
+┌───────────┬────────────────────┬─────────────┬───────────────────────────┐
+│ NAMESPACE │        NAME        │ TARGET PORT │            URL            │
+├───────────┼────────────────────┼─────────────┼───────────────────────────┤
+│ default   │ my-k8s-app-service │ 8080        │ http://192.168.49.2:32000 │
+└───────────┴────────────────────┴─────────────┴───────────────────────────┘
+🎉  Opening service default/my-k8s-app-service in default browser...
+suraj-anagandula@Suraj:~/Desktop/sudev$ Opening in existing browser session.
+^C
+suraj-anagandula@Suraj:~/Desktop/sudev$ sudo systemctl stop jenkins
+[sudo] password for suraj-anagandula: 
+suraj-anagandula@Suraj:~/Desktop/sudev$ sudo systemctl status jenkins
+○ jenkins.service - Jenkins Continuous Integration Server
+     Loaded: loaded (/usr/lib/systemd/system/jenkins.service; enabled; preset: >
+     Active: inactive (dead) since Thu 2026-03-26 05:12:17 IST; 13s ago
+   Duration: 4h 14min 24.398s
+    Process: 54573 ExecStart=/usr/bin/jenkins (code=exited, status=143)
+   Main PID: 54573 (code=exited, status=143)
+     Status: "Jenkins stopped"
+        CPU: 1min 58.477s
+
+Mar 26 05:12:16 Suraj jenkins[54573]: 2026-03-25 23:42:16.824+0000 [id=35]     >
+Mar 26 05:12:16 Suraj jenkins[54573]: 2026-03-25 23:42:16.831+0000 [id=35]     >
+Mar 26 05:12:16 Suraj jenkins[54573]: 2026-03-25 23:42:16.831+0000 [id=35]     >
+Mar 26 05:12:16 Suraj jenkins[54573]: 2026-03-25 23:42:16.837+0000 [id=35]     >
+Mar 26 05:12:16 Suraj jenkins[54573]: 2026-03-25 23:42:16.861+0000 [id=35]     >
+Mar 26 05:12:16 Suraj jenkins[54573]: 2026-03-25 23:42:16.869+0000 [id=35]     >
+Mar 26 05:12:16 Suraj jenkins[54573]: 2026-03-25 23:42:16.869+0000 [id=35]     >
+Mar 26 05:12:17 Suraj systemd[1]: jenkins.service: Deactivated successfully.
+Mar 26 05:12:17 Suraj systemd[1]: Stopped jenkins.service - Jenkins Continuous >
+Mar 26 05:12:17 Suraj systemd[1]: jenkins.service: Consumed 1min 58.477s CPU ti>
+
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube service my-k8s-app-service
+┌───────────┬────────────────────┬─────────────┬───────────────────────────┐
+│ NAMESPACE │        NAME        │ TARGET PORT │            URL            │
+├───────────┼────────────────────┼─────────────┼───────────────────────────┤
+│ default   │ my-k8s-app-service │ 8080        │ http://192.168.49.2:32000 │
+└───────────┴────────────────────┴─────────────┴───────────────────────────┘
+🎉  Opening service default/my-k8s-app-service in default browser...
+suraj-anagandula@Suraj:~/Desktop/sudev$ Opening in existing browser session.
+^C
+suraj-anagandula@Suraj:~/Desktop/sudev$ nano deployment.yaml 
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl apply -f deployment.yaml
+deployment.apps/my-k8s-app-deployment configured
+suraj-anagandula@Suraj:~/Desktop/sudev$ nano service.yaml 
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl apply -f service.yaml
+service/my-k8s-app-service configured
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get pods
+NAME                                     READY   STATUS    RESTARTS      AGE
+my-k8s-app-deployment-6cfc87696d-rqnn8   1/1     Running   0             51s
+my-k8s-app-deployment-6cfc87696d-x9xxs   1/1     Running   0             53s
+myapp-7657599598-kwb64                   1/1     Running   1 (17m ago)   5h43m
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get deployments
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+my-k8s-app-deployment   2/2     2            2           8m
+myapp                   1/1     1            1           5h44m
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube service my-k8s-app-service
+┌───────────┬────────────────────┬─────────────┬───────────────────────────┐
+│ NAMESPACE │        NAME        │ TARGET PORT │            URL            │
+├───────────┼────────────────────┼─────────────┼───────────────────────────┤
+│ default   │ my-k8s-app-service │ 2000        │ http://192.168.49.2:32000 │
+└───────────┴────────────────────┴─────────────┴───────────────────────────┘
+🎉  Opening service default/my-k8s-app-service in default browser...
+suraj-anagandula@Suraj:~/Desktop/sudev$ Opening in existing browser session.
+[116391:116391:0100/000000.783522:ERROR:content/zygote/zygote_linux.cc:669] write: Broken pipe (32)
+^C
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube service my-k8s-app-service
+┌───────────┬────────────────────┬─────────────┬───────────────────────────┐
+│ NAMESPACE │        NAME        │ TARGET PORT │            URL            │
+├───────────┼────────────────────┼─────────────┼───────────────────────────┤
+│ default   │ my-k8s-app-service │ 2000        │ http://192.168.49.2:32000 │
+└───────────┴────────────────────┴─────────────┴───────────────────────────┘
+🎉  Opening service default/my-k8s-app-service in default browser...
+suraj-anagandula@Suraj:~/Desktop/sudev$ Opening in existing browser session.
+^C
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl apply -f deployment.yaml
+deployment.apps/my-k8s-app-deployment configured
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl apply -f service.yaml
+service/my-k8s-app-service configured
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get pods
+NAME                                     READY   STATUS        RESTARTS      AGE
+my-k8s-app-deployment-6cfc87696d-rqnn8   1/1     Terminating   0             3m37s
+my-k8s-app-deployment-6cfc87696d-x9xxs   1/1     Terminating   0             3m39s
+my-k8s-app-deployment-775c457458-f6g9z   1/1     Running       0             7s
+my-k8s-app-deployment-775c457458-qxkx6   1/1     Running       0             5s
+myapp-7657599598-kwb64                   1/1     Running       1 (19m ago)   5h46m
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get deployments
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+my-k8s-app-deployment   2/2     2            2           10m
+myapp                   1/1     1            1           5h46m
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube service my-k8s-app-service
+┌───────────┬────────────────────┬─────────────┬───────────────────────────┐
+│ NAMESPACE │        NAME        │ TARGET PORT │            URL            │
+├───────────┼────────────────────┼─────────────┼───────────────────────────┤
+│ default   │ my-k8s-app-service │ 8080        │ http://192.168.49.2:32000 │
+└───────────┴────────────────────┴─────────────┴───────────────────────────┘
+🎉  Opening service default/my-k8s-app-service in default browser...
+suraj-anagandula@Suraj:~/Desktop/sudev$ Opening in existing browser session.
+^C
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker ps
+CONTAINER ID   IMAGE                    COMMAND                  CREATED          STATUS          PORTS                                                                                                                                  NAMES
+5b6656337ea9   surajanagandula/sudev    "docker-entrypoint.s…"   32 minutes ago   Up 32 minutes   0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp                                                                                            loving_elgamal
+b272a1c0df7f   kicbase/stable:v0.0.50   "/usr/local/bin/entr…"   6 hours ago      Up 20 minutes   127.0.0.1:32773->22/tcp, 127.0.0.1:32774->2376/tcp, 127.0.0.1:32775->5000/tcp, 127.0.0.1:32776->8443/tcp, 127.0.0.1:32777->32443/tcp   minikube
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker stop 5b6
+5b6                                 
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker stop b27
+b27
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker images
+                                                            i Info →   U  In Use
+IMAGE                           ID             DISK USAGE   CONTENT SIZE   EXTRA
+bittu:latest                    a9711ab41f9c       1.58GB          397MB    U   
+calcapp:latest                  a2b4d3e76247       1.57GB          397MB        
+hello-world:latest              452a468a4bf9       25.9kB         9.49kB        
+kicbase/stable:v0.0.50          b97074569ae9       1.94GB          545MB        
+kicbase/stable@sha256:eb4fec00e8ad70adf8e6436f195cc429825ffb85f95afcdb5d8d9deb576f3e93
+                                eb4fec00e8ad       1.94GB          545MB    U   
+my-k8s-app:v1                   7934e9cb56f2       1.58GB          396MB        
+pranaymedipally/calculator-app:latest
+                                3e26b27a9f5f       1.58GB          397MB    U   
+sudev:latest                    44f4982782c4        191MB         46.2MB    U   
+surajanagandula/bittu:latest    4b1499ec10fa       1.57GB          397MB    U   
+surajanagandula/calcapp:latest
+                                a2b4d3e76247       1.57GB          397MB        
+surajanagandula/my-k8s-app:v1   7934e9cb56f2       1.58GB          396MB        
+surajanagandula/sudev:latest    869d48208b72        186MB         45.6MB    U   
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker build -t sudev:v1
+ERROR: docker: 'docker buildx build' requires 1 argument
+
+Usage:  docker buildx build [OPTIONS] PATH | URL | -
+
+Run 'docker buildx build --help' for more information
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker build -t sudev:v1 .
+[+] Building 5.3s (11/11) FINISHED                               docker:default
+ => [internal] load build definition from Dockerfile                       0.0s
+ => => transferring dockerfile: 192B                                       0.0s
+ => [internal] load metadata for docker.io/library/node:18                 3.4s
+ => [auth] library/node:pull token for registry-1.docker.io                0.0s
+ => [internal] load .dockerignore                                          0.0s
+ => => transferring context: 2B                                            0.0s
+ => [1/5] FROM docker.io/library/node:18@sha256:c6ae79e38498325db67193d39  0.1s
+ => => resolve docker.io/library/node:18@sha256:c6ae79e38498325db67193d39  0.1s
+ => [internal] load build context                                          0.1s
+ => => transferring context: 43.05kB                                       0.1s
+ => CACHED [2/5] WORKDIR /app                                              0.0s
+ => CACHED [3/5] COPY package*.json ./                                     0.0s
+ => CACHED [4/5] RUN npm ci --only=production && npm cache clean --force   0.0s
+ => [5/5] COPY . .                                                         0.7s
+ => exporting to image                                                     0.7s
+ => => exporting layers                                                    0.3s
+ => => exporting manifest sha256:55f7d9874a6da5ffbed541eaaec21d56910b4134  0.0s
+ => => exporting config sha256:c336b71709dc1b62ec80fa5e27770eca178fe482d8  0.0s
+ => => exporting attestation manifest sha256:fd1b4cc4c378de2cdac61742b7e3  0.0s
+ => => exporting manifest list sha256:6497fd99fa6ceb34853309dcc5d3d36fab2  0.0s
+ => => naming to docker.io/library/sudev:v1                                0.0s
+ => => unpacking to docker.io/library/sudev:v1                             0.2s
+suraj-anagandula@Suraj:~/Desktop/sudev$ docker tag sudev:v1 surajanagandula/sudev:v1
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube image load surajanagandula/sudev:v1
+
+
+
+
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ 
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl apply -f deployment.yaml 
+error: error validating "deployment.yaml": error validating data: failed to download openapi: Get "https://192.168.49.2:8443/openapi/v2?timeout=32s": dial tcp 192.168.49.2:8443: connect: no route to host; if you choose to ignore these errors, turn validation off with --validate=false
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl apply -f deployment.yaml 
+error: error validating "deployment.yaml": error validating data: failed to download openapi: Get "https://192.168.49.2:8443/openapi/v2?timeout=32s": dial tcp 192.168.49.2:8443: connect: no route to host; if you choose to ignore these errors, turn validation off with --validate=false
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube start
+😄  minikube v1.38.1 on Ubuntu 24.04
+✨  Using the docker driver based on existing profile
+👍  Starting "minikube" primary control-plane node in "minikube" cluster
+🚜  Pulling base image v0.0.50 ...
+🔄  Restarting existing docker container for "minikube" ...
+🐳  Preparing Kubernetes v1.35.1 on Docker 29.2.1 ...
+🔎  Verifying Kubernetes components...
+    ▪ Using image gcr.io/k8s-minikube/storage-provisioner:v5
+🌟  Enabled addons: storage-provisioner, default-storageclass
+
+❗  /usr/local/bin/kubectl is version 1.31.0, which may have incompatibilities with Kubernetes 1.35.1.
+    ▪ Want kubectl v1.35.1? Try 'minikube kubectl -- get pods -A'
+🏄  Done! kubectl is now configured to use "minikube" cluster and "default" namespace by default
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get nodes
+NAME       STATUS   ROLES           AGE   VERSION
+minikube   Ready    control-plane   6h    v1.35.1
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl apply -f deployment.yaml
+kubectl apply -f service.yaml
+deployment.apps/sudev-deployment created
+service/sudev-service created
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube service sudev-service
+┌───────────┬───────────────┬─────────────┬───────────────────────────┐
+│ NAMESPACE │     NAME      │ TARGET PORT │            URL            │
+├───────────┼───────────────┼─────────────┼───────────────────────────┤
+│ default   │ sudev-service │ 3000        │ http://192.168.49.2:30007 │
+└───────────┴───────────────┴─────────────┴───────────────────────────┘
+
+❌  Exiting due to SVC_UNREACHABLE: service not available: no running pod for service sudev-service found
+
+╭───────────────────────────────────────────────────────────────────────────────────────────╮
+│                                                                                           │
+│    😿  If the above advice does not help, please let us know:                             │
+│    👉  https://github.com/kubernetes/minikube/issues/new/choose                           │
+│                                                                                           │
+│    Please run `minikube logs --file=logs.txt` and attach logs.txt to the GitHub issue.    │
+│    Please also attach the following file to the GitHub issue:                             │
+│    - /tmp/minikube_service_e69b246844864677698265598e0e16db68c5450f_0.log                 │
+│                                                                                           │
+╰───────────────────────────────────────────────────────────────────────────────────────────╯
+
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get pods
+NAME                                     READY   STATUS              RESTARTS       AGE
+my-k8s-app-deployment-775c457458-f6g9z   1/1     Running             1 (100s ago)   8m56s
+my-k8s-app-deployment-775c457458-qxkx6   1/1     Running             1 (100s ago)   8m54s
+myapp-7657599598-kwb64                   1/1     Running             2 (100s ago)   5h55m
+sudev-deployment-77cf94878f-p57nd        0/1     ContainerCreating   0              49s
+sudev-deployment-77cf94878f-wqhkn        0/1     ContainerCreating   0              49s
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get deployments
+NAME                    READY   UP-TO-DATE   AVAILABLE   AGE
+my-k8s-app-deployment   2/2     2            2           19m
+myapp                   1/1     1            1           5h55m
+sudev-deployment        1/2     2            1           64s
+suraj-anagandula@Suraj:~/Desktop/sudev$ kubectl get services
+NAME                 TYPE        CLUSTER-IP       EXTERNAL-IP   PORT(S)          AGE
+kubernetes           ClusterIP   10.96.0.1        <none>        443/TCP          6h1m
+my-k8s-app-service   NodePort    10.100.223.14    <none>        8080:32000/TCP   17m
+myapp                NodePort    10.101.223.136   <none>        3000:30736/TCP   5h55m
+sudev-service        NodePort    10.110.135.213   <none>        3000:30007/TCP   76s
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube image load surajanagandula/sudev:v1
+suraj-anagandula@Suraj:~/Desktop/sudev$ minikube service sudev-service
+┌───────────┬───────────────┬─────────────┬───────────────────────────┐
+│ NAMESPACE │     NAME      │ TARGET PORT │            URL            │
+├───────────┼───────────────┼─────────────┼───────────────────────────┤
+│ default   │ sudev-service │ 3000        │ http://192.168.49.2:30007 │
+└───────────┴───────────────┴─────────────┴───────────────────────────┘
+🎉  Opening service default/sudev-service in default browser...
+suraj-anagandula@Suraj:~/Desktop/sudev$ Opening in existing browser session.
+
+
